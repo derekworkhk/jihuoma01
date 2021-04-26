@@ -1,0 +1,25 @@
+{
+  "name": "jihuoma01",
+  "version": "1.0.0",
+  "description": "Getting the jihuoma made easy",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekworkhk/jihuoma01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekworkhk/jihuoma01/issues"
+  },
+  "homepage": "https://github.com/derekworkhk/jihuoma01#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.5",
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  }
+}
