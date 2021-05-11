@@ -1,11 +1,10 @@
 const express = require('express')
+require('dotenv').config()
+const AdmZip = require('adm-zip');
+const request = require('request');
 const app = express()
-// const port = 3000;
-const port = 80;
-var AdmZip = require('adm-zip');
-var request = require('request');
-// var file_url = 'http://localhost:3001';
-var file_url = 'http://idea.medeming.com/a/jihuoma.zip';
+const port = process.env.ENV==='prod'?process.env.PORT_PROD:process.env.PORT_DEV;
+var file_url = process.env.ENV==='prod'?process.env.ZIP_PATH_PROD:process.env.ZIP_PATH_DEV;
 
 app.get('/', (req, res) => {
     let ress = res;
@@ -25,11 +24,11 @@ app.get('/', (req, res) => {
             }
         });
         if(!done)
-            ress.send('error')
+            ress.send('code failed to download')
     });
 
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`jihuoma listening at http://localhost:${port}`)
 })
